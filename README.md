@@ -40,7 +40,22 @@ val noopStuff = getCustomerById(Noop()) _
 
 ```
 
-#### Imutability
+#### Pattern matching
+
+```
+trait Command
+case class Translate(from: String, to: String) extends Command
+case class Run(executable: String) extends Command
+
+val command = ???
+
+command match {
+  case Translate(from, to) => ???
+  case Run(execute) => ???
+}
+```
+
+#### Immutability
 ```scala
 
 val list = List(1,2,3,4,5)
